@@ -120,3 +120,228 @@
     @apply animate-glow;
   }
 }
+
+
+@keyframes orbit {
+  from {
+    transform: translateX(-1rem) translateY(0) rotate(0deg) translateX(1rem) rotate(0deg);
+  }
+  to {
+    transform: translateX(-1rem) translateY(0) rotate(360deg) translateX(1rem) rotate(-360deg);
+  }
+}
+
+.animate-orbit {
+  animation: orbit 3s linear infinite;
+}
+
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease forwards;
+}
+
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes glow {
+  0%, 100% { 
+    filter: drop-shadow(0 0 5px rgba(139, 92, 246, 0.7));
+    opacity: 0.7;
+  }
+  50% { 
+    filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.9));
+    opacity: 1;
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: translateX(-1rem) translateY(0) rotate(0deg) translateX(1rem) rotate(0deg);
+  }
+  to {
+    transform: translateX(-1rem) translateY(0) rotate(360deg) translateX(1rem) rotate(-360deg);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation classes */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 4s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 15s linear infinite;
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.animate-orbit {
+  animation: orbit 3s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+/* Animation delays */
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2000ms;
+}
+
+/* Additional color variables */
+:root {
+  --eunoia-purple: rgb(126, 105, 171);
+  --eunoia-light-purple: rgb(155, 135, 245);
+  --eunoia-soft-purple: rgb(229, 222, 255);
+  --eunoia-blue: rgb(30, 174, 219);
+  --eunoia-gold: rgb(247, 203, 69);
+  --eunoia-dark: rgb(26, 31, 44);
+}
+
+/* Gradient text effect */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-eunoia-purple via-eunoia-blue to-eunoia-light-purple;
+}
+
+/* Glass effect */
+.glass-effect {
+  @apply bg-white/70 backdrop-blur-sm border border-white/30;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(229, 222, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(126, 105, 171, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(126, 105, 171, 0.5);
+}
+
+/* Improved focus styles */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid rgba(126, 105, 171, 0.5);
+  outline-offset: 2px;
+}
+
+/* Section transitions */
+section {
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gradient-text {
+    background-size: 200% auto;
+  }
+  
+  .plasma-orb {
+    opacity: 0.5;
+  }
+}
+
+/* Add a slight scroll margin to sections for better anchor scrolling */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Improve button and link hover states */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for cards */
+.card-hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(126, 105, 171, 0.1), 
+              0 10px 10px -5px rgba(126, 105, 171, 0.04);
+}
+
+/* Pulsing effect for CTA buttons */
+@keyframes subtle-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(126, 105, 171, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(126, 105, 171, 0);
+  }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 3s infinite;
+}
