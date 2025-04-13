@@ -13,7 +13,7 @@ const Logo: React.FC<LogoProps> = ({ className = "" }) => {
         <div className="absolute w-6 h-6 border-2 border-eunoia-purple rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-80 animate-spin-slow animation-delay-2000"></div>
         <div className="absolute w-2 h-2 bg-eunoia-gold rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse-soft"></div>
       </div>
-      <h1 className="font-serif text-2xl font-semibold tracking-wide gradient-text">eunoia</h1>
+      <h1 className="font-serif text-2xl font-semibold tracking-wide gradient-text">Eunoia</h1>
     </div>
   );
 };

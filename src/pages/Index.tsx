@@ -26,6 +26,25 @@ const Index = () => {
         }
       });
     });
+    
+    // Add reveal animation on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+          entry.target.classList.remove('opacity-0');
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('section').forEach(section => {
+      if (section.id !== 'hero') {
+        section.classList.add('opacity-0');
+        observer.observe(section);
+      }
+    });
+    
+    return () => observer.disconnect();
   }, []);
   
   return (

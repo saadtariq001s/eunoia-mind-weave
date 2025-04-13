@@ -30,7 +30,7 @@ interface PlasmaAnimationProps {
   className?: string;
 }
 
-const PlasmaAnimation: React.FC<PlasmaAnimationProps> = ({ orbCount = 6, className = "" }) => {
+const PlasmaAnimation: React.FC<PlasmaAnimationProps> = ({ orbCount = 8, className = "" }) => {
   const [orbs, setOrbs] = useState<PlasmaOrbProps[]>([]);
   
   useEffect(() => {
@@ -38,11 +38,11 @@ const PlasmaAnimation: React.FC<PlasmaAnimationProps> = ({ orbCount = 6, classNa
     
     for (let i = 0; i < orbCount; i++) {
       newOrbs.push({
-        size: Math.floor(Math.random() * 300) + 100, // 100-400px
+        size: Math.floor(Math.random() * 400) + 150, // 150-550px (larger orbs)
         x: Math.floor(Math.random() * 100),
         y: Math.floor(Math.random() * 100),
-        delay: Math.random() * 5,
-        duration: Math.floor(Math.random() * 10) + 5, // 5-15s
+        delay: Math.random() * 3, // Faster start
+        duration: Math.floor(Math.random() * 8) + 4, // 4-12s (faster animation)
       });
     }
     
