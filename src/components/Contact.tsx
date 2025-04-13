@@ -41,7 +41,7 @@ const FormField: React.FC<{
           placeholder={placeholder}
           value={value}
           onChange={onChange as any}
-          className={`w-full px-4 py-3 rounded-md border ${error ? 'border-red-400 focus:ring-red-400/30' : 'border-eunoia-soft-purple/40 focus:ring-eunoia-purple/30'} focus:outline-none focus:ring-2 bg-white/70 backdrop-blur-sm transition-all duration-200`}
+          className={`w-full px-4 py-3 rounded-md border ${error ? 'border-eunoia-error focus:ring-eunoia-error/30' : 'border-eunoia-soft-purple/40 focus:ring-eunoia-purple/30'} focus:outline-none focus:ring-2 bg-white/70 backdrop-blur-sm transition-all duration-200`}
         />
       )}
       
@@ -52,7 +52,7 @@ const FormField: React.FC<{
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          className={`w-full px-4 py-3 rounded-md border ${error ? 'border-red-400 focus:ring-red-400/30' : 'border-eunoia-soft-purple/40 focus:ring-eunoia-purple/30'} focus:outline-none focus:ring-2 bg-white/70 backdrop-blur-sm transition-all duration-200`}
+          className={`w-full px-4 py-3 rounded-md border ${error ? 'border-eunoia-error focus:ring-eunoia-error/30' : 'border-eunoia-soft-purple/40 focus:ring-eunoia-purple/30'} focus:outline-none focus:ring-2 bg-white/70 backdrop-blur-sm transition-all duration-200`}
         ></textarea>
       )}
       
@@ -61,7 +61,7 @@ const FormField: React.FC<{
           id={id}
           value={value}
           onChange={onChange as any}
-          className={`w-full px-4 py-3 rounded-md border ${error ? 'border-red-400 focus:ring-red-400/30' : 'border-eunoia-soft-purple/40 focus:ring-eunoia-purple/30'} focus:outline-none focus:ring-2 bg-white/70 backdrop-blur-sm transition-all duration-200`}
+          className={`w-full px-4 py-3 rounded-md border ${error ? 'border-eunoia-error focus:ring-eunoia-error/30' : 'border-eunoia-soft-purple/40 focus:ring-eunoia-purple/30'} focus:outline-none focus:ring-2 bg-white/70 backdrop-blur-sm transition-all duration-200`}
         >
           <option value="">{placeholder}</option>
           {options.map((option) => (
@@ -73,7 +73,7 @@ const FormField: React.FC<{
       )}
       
       {error && (
-        <p className="mt-1 text-sm text-red-500 flex items-center">
+        <p className="mt-1 text-sm text-eunoia-error flex items-center">
           <AlertCircle size={12} className="mr-1" />
           {error}
         </p>
@@ -195,14 +195,14 @@ const Contact: React.FC = () => {
           <h2 className="font-serif text-3xl md:text-5xl font-bold mb-4">
             <span className="gradient-text">Connect With Us</span>
           </h2>
-          <p className="text-eunoia-dark/70 max-w-2xl mx-auto text-lg">
+          <p className="text-eunoia-dark-secondary max-w-2xl mx-auto text-lg">
             Ready to transform complexity into clarity? Reach out to begin your journey with Eunoia.
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="order-2 md:order-1">
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-xl p-8 border border-eunoia-soft-purple/30 relative overflow-hidden">
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-purple-lg p-8 border border-eunoia-soft-purple/30 relative overflow-hidden">
               {/* Background decoration */}
               <div className="absolute -top-24 -right-24 w-48 h-48 bg-eunoia-soft-purple/10 rounded-full"></div>
               <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-eunoia-soft-purple/10 rounded-full"></div>
@@ -213,16 +213,16 @@ const Contact: React.FC = () => {
                 {isSubmitted ? (
                   <div className="py-12">
                     <div className="flex flex-col items-center justify-center text-center">
-                      <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
-                        <CheckCircle size={32} className="text-green-600" />
+                      <div className="w-16 h-16 rounded-full bg-eunoia-success/10 flex items-center justify-center mb-4">
+                        <CheckCircle size={32} className="text-eunoia-success" />
                       </div>
                       <h4 className="font-serif text-xl text-eunoia-dark mb-2">Message Sent Successfully!</h4>
-                      <p className="text-eunoia-dark/70 mb-6">
+                      <p className="text-eunoia-dark-secondary mb-6">
                         Thank you for reaching out. We'll get back to you within 24 hours.
                       </p>
                       <button 
                         onClick={() => setIsSubmitted(false)}
-                        className="text-eunoia-purple hover:text-eunoia-light-purple font-medium transition-colors"
+                        className="text-eunoia-purple hover:text-eunoia-medium-purple font-medium transition-colors"
                       >
                         Send another message
                       </button>
@@ -285,8 +285,8 @@ const Contact: React.FC = () => {
                       className={`w-full relative overflow-hidden group ${
                         isSubmitting 
                           ? 'bg-eunoia-soft-purple/50 cursor-not-allowed' 
-                          : 'bg-gradient-to-r from-eunoia-purple to-eunoia-light-purple hover:from-eunoia-light-purple hover:to-eunoia-purple'
-                      } text-white py-3 rounded-md font-sans font-medium transition-all shadow-md hover:shadow-lg`}
+                          : 'bg-gradient-to-r from-eunoia-purple to-eunoia-medium-purple hover:from-eunoia-medium-purple hover:to-eunoia-purple'
+                      } text-white py-3 rounded-md font-sans font-medium transition-all shadow-purple-md hover:shadow-purple-lg`}
                     >
                       <span className="relative z-10 flex items-center justify-center">
                         {isSubmitting ? (
@@ -314,45 +314,45 @@ const Contact: React.FC = () => {
           
           <div className="order-1 md:order-2">
             <div className="space-y-8">
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-eunoia-soft-purple/30 flex items-start gap-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-purple-md border border-eunoia-soft-purple/30 flex items-start gap-6 transition-all duration-300 hover:shadow-purple-lg hover:-translate-y-1">
                 <div className="bg-gradient-to-r from-eunoia-soft-purple/40 to-eunoia-soft-purple/20 w-16 h-16 rounded-lg flex-shrink-0 flex items-center justify-center">
                   <Mail className="text-eunoia-purple" size={28} />
                 </div>
                 <div>
                   <h3 className="font-serif text-xl mb-3 text-eunoia-dark">Email Us</h3>
-                  <a href="mailto:info@eunoia.ai" className="text-eunoia-dark/70 hover:text-eunoia-purple transition-colors block mb-2">info@eunoia.ai</a>
-                  <a href="mailto:support@eunoia.ai" className="text-eunoia-dark/70 hover:text-eunoia-purple transition-colors block">support@eunoia.ai</a>
-                  <p className="mt-4 text-sm text-eunoia-dark/50">Response time: Within 24 hours</p>
+                  <a href="mailto:info@eunoia.ai" className="text-eunoia-dark-secondary hover:text-eunoia-purple transition-colors block mb-2">info@eunoia.ai</a>
+                  <a href="mailto:support@eunoia.ai" className="text-eunoia-dark-secondary hover:text-eunoia-purple transition-colors block">support@eunoia.ai</a>
+                  <p className="mt-4 text-sm text-eunoia-dark-secondary/70">Response time: Within 24 hours</p>
                 </div>
               </div>
               
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-eunoia-soft-purple/30 flex items-start gap-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-purple-md border border-eunoia-soft-purple/30 flex items-start gap-6 transition-all duration-300 hover:shadow-purple-lg hover:-translate-y-1">
                 <div className="bg-gradient-to-r from-eunoia-soft-purple/40 to-eunoia-soft-purple/20 w-16 h-16 rounded-lg flex-shrink-0 flex items-center justify-center">
                   <Phone className="text-eunoia-purple" size={28} />
                 </div>
                 <div>
                   <h3 className="font-serif text-xl mb-3 text-eunoia-dark">Call Us</h3>
-                  <a href="tel:+15551234567" className="text-eunoia-dark/70 hover:text-eunoia-purple transition-colors block mb-2">+1 (555) 123-4567</a>
-                  <p className="text-eunoia-dark/70">Mon-Fri, 9:00 AM - 6:00 PM</p>
-                  <p className="mt-4 text-sm text-eunoia-dark/50">International: +44 20 1234 5678</p>
+                  <a href="tel:+15551234567" className="text-eunoia-dark-secondary hover:text-eunoia-purple transition-colors block mb-2">+1 (555) 123-4567</a>
+                  <p className="text-eunoia-dark-secondary">Mon-Fri, 9:00 AM - 6:00 PM</p>
+                  <p className="mt-4 text-sm text-eunoia-dark-secondary/70">International: +44 20 1234 5678</p>
                 </div>
               </div>
               
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-eunoia-soft-purple/30 flex items-start gap-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-purple-md border border-eunoia-soft-purple/30 flex items-start gap-6 transition-all duration-300 hover:shadow-purple-lg hover:-translate-y-1">
                 <div className="bg-gradient-to-r from-eunoia-soft-purple/40 to-eunoia-soft-purple/20 w-16 h-16 rounded-lg flex-shrink-0 flex items-center justify-center">
                   <MapPin className="text-eunoia-purple" size={28} />
                 </div>
                 <div>
                   <h3 className="font-serif text-xl mb-3 text-eunoia-dark">Visit Us</h3>
-                  <address className="text-eunoia-dark/70 not-italic">
+                  <address className="text-eunoia-dark-secondary not-italic">
                     <p>123 Innovation Way</p>
                     <p>Tech District, Athens, Greece</p>
                   </address>
-                  <p className="mt-4 text-sm text-eunoia-dark/50">By appointment only</p>
+                  <p className="mt-4 text-sm text-eunoia-dark-secondary/70">By appointment only</p>
                 </div>
               </div>
               
-              <div className="bg-gradient-to-r from-eunoia-purple to-eunoia-light-purple rounded-xl p-8 shadow-xl text-white">
+              <div className="bg-gradient-to-r from-eunoia-purple to-eunoia-medium-purple rounded-xl p-8 shadow-purple-lg text-white">
                 <h3 className="font-serif text-xl mb-3">Join Our Newsletter</h3>
                 <p className="text-white/80 mb-4">Get monthly updates on AI trends, exclusive insights, and upcoming events.</p>
                 
@@ -362,7 +362,7 @@ const Contact: React.FC = () => {
                     placeholder="Your email address" 
                     className="w-full px-4 py-3 rounded-md border border-white/30 bg-white/20 placeholder-white/50 text-white focus:outline-none focus:ring-2 focus:ring-white/30"
                   />
-                  <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-white text-eunoia-purple px-4 py-1.5 rounded-md font-medium transition-all hover:bg-eunoia-soft-purple/90 hover:text-white">
+                  <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-white text-eunoia-purple px-4 py-1.5 rounded-md font-medium transition-all hover:bg-eunoia-gold hover:text-white">
                     Subscribe
                   </button>
                 </div>
@@ -371,16 +371,16 @@ const Contact: React.FC = () => {
           </div>
         </div>
         
-        {/* World map or location indicator could go here */}
+        {/* Testimonial */}
         <div className="mt-16 text-center">
-          <p className="text-eunoia-dark/70">We have partners and clients worldwide</p>
-          <div className="mt-8 bg-white/60 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-eunoia-soft-purple/20 max-w-3xl mx-auto">
-            <div className="font-serif italic text-eunoia-dark/80 text-lg">
+          <p className="text-eunoia-dark-secondary">We have partners and clients worldwide</p>
+          <div className="mt-8 bg-white/60 backdrop-blur-sm rounded-xl p-6 shadow-purple-md border border-eunoia-soft-purple/20 max-w-3xl mx-auto">
+            <div className="font-serif italic text-eunoia-dark text-lg">
               "Working with Eunoia transformed how we approach market analysis. Their AI solutions cut our research time in half while doubling the quality of insights."
             </div>
             <div className="mt-4">
               <div className="font-medium text-eunoia-dark">Sarah Johnson</div>
-              <div className="text-sm text-eunoia-dark/60">Chief Strategy Officer, Global Insights Inc.</div>
+              <div className="text-sm text-eunoia-dark-secondary">Chief Strategy Officer, Global Insights Inc.</div>
             </div>
           </div>
         </div>

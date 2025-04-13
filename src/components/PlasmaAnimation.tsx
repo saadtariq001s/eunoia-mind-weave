@@ -19,7 +19,7 @@ const PlasmaOrb: React.FC<PlasmaOrbProps> = ({
   colorVariant,
   opacity
 }) => {
-  // Define gradient based on color variant
+  // Define gradient based on color variant using our new colors
   let gradientClass = '';
   
   switch (colorVariant) {
@@ -27,16 +27,16 @@ const PlasmaOrb: React.FC<PlasmaOrbProps> = ({
       gradientClass = 'from-eunoia-light-purple to-eunoia-purple';
       break;
     case 'blue':
-      gradientClass = 'from-eunoia-blue to-eunoia-purple';
+      gradientClass = 'from-eunoia-medium-purple to-eunoia-purple';
       break;
     case 'gold':
-      gradientClass = 'from-eunoia-gold to-eunoia-purple';
+      gradientClass = 'from-eunoia-gold to-eunoia-medium-purple';
       break;
     case 'teal':
-      gradientClass = 'from-teal-400 to-eunoia-blue';
+      gradientClass = 'from-green-400 to-eunoia-medium-purple';
       break;
     case 'mixed':
-      gradientClass = 'from-eunoia-gold via-eunoia-purple to-eunoia-blue';
+      gradientClass = 'from-eunoia-gold via-eunoia-purple to-eunoia-medium-purple';
       break;
     default:
       gradientClass = 'from-eunoia-light-purple to-eunoia-purple';
@@ -91,12 +91,12 @@ const PlasmaAnimation: React.FC<PlasmaAnimationProps> = ({
       case 'medium':
         minSize = 60;
         maxSize = 200;
-        actualOrbCount = orbCount * 1.5;
+        actualOrbCount = Math.floor(orbCount * 1.5);
         break;
       case 'high':
         minSize = 30;
         maxSize = 150;
-        actualOrbCount = orbCount * 2.5;
+        actualOrbCount = Math.floor(orbCount * 2.5);
         break;
     }
 

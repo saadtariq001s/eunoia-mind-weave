@@ -69,7 +69,7 @@ const FloatingIcon: React.FC<{ icon: React.ReactNode, delay: number, duration: n
 }) => {
   return (
     <div 
-      className={`absolute opacity-80 bg-white/10 backdrop-blur-sm rounded-full p-3 shadow-xl border border-white/20 animate-float ${className}`}
+      className={`absolute opacity-80 bg-white/10 backdrop-blur-sm rounded-full p-3 shadow-purple-md border border-white/20 animate-float ${className}`}
       style={{ 
         animationDelay: `${delay}s`,
         animationDuration: `${duration}s`
@@ -111,42 +111,27 @@ const Hero: React.FC = () => {
         orbCount={20} 
       />
       
-      {/* Floating icons */}
-      <FloatingIcon 
-        icon={<Sparkles className="text-eunoia-light-purple" size={20} />} 
-        delay={0.5} 
-        duration={5}
-        className="top-1/4 left-1/5 md:left-1/4"
-      />
-      <FloatingIcon 
-        icon={<Brain className="text-eunoia-purple" size={18} />} 
-        delay={1.2} 
-        duration={6}
-        className="top-1/3 right-1/5 md:right-1/4"
-      />
+      
+
+      
       <FloatingIcon 
         icon={<Heart className="text-eunoia-gold" size={16} />} 
         delay={2} 
         duration={7}
         className="bottom-1/4 left-1/3"
       />
-      <FloatingIcon 
-        icon={<Sparkles className="text-eunoia-blue" size={16} />} 
-        delay={1.5} 
-        duration={5.5}
-        className="bottom-1/3 right-1/3"
-      />
+      
       
       {/* Main content */}
       <div className="container mx-auto px-6 z-10 relative">
         <div className="max-w-4xl mx-auto">
           {/* Hero badge */}
           <div className={`flex justify-center mb-8 transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0 -translate-y-10'}`}>
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full shadow-lg inline-flex items-center">
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full shadow-purple-md inline-flex items-center">
               <div className="bg-eunoia-light-purple/20 rounded-full p-1 mr-2">
-                <Sparkles size={14} className="text-eunoia-light-purple" />
+                <Sparkles size={14} className="text-eunoia-purple" />
               </div>
-              <span className="text-eunoia-dark/90 text-sm font-medium">
+              <span className="text-eunoia-dark text-sm font-medium">
                 Next Generation AI Solutions
               </span>
             </div>
@@ -161,16 +146,17 @@ const Hero: React.FC = () => {
               <div className="mb-3">
                 <span className="gradient-text">Amplifying Potential</span>
               </div>
+            
             </h1>
             
-            <p className={`text-lg md:text-xl text-eunoia-dark/90 mb-10 max-w-2xl mx-auto transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
+            <p className={`text-lg md:text-xl text-eunoia-dark-secondary mb-10 max-w-2xl mx-auto transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
               At Eunoia, we blend ancient wisdom with cutting-edge AI to create solutions that embody clarity, creativity, and compassion in every interaction.
             </p>
             
-            {/* CTA buttons */}
+            {/* CTA buttons with updated styles */}
             <div className={`flex flex-col sm:flex-row justify-center gap-4 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
-              {/* Primary CTA */}
-              <button className="relative overflow-hidden group bg-gradient-to-r from-eunoia-purple to-eunoia-light-purple hover:from-eunoia-light-purple hover:to-eunoia-purple text-white px-8 py-4 rounded-md font-sans font-medium transition-all shadow-xl hover:shadow-2xl">
+              {/* Primary CTA Button - using our new gradient */}
+              <button className="relative overflow-hidden group bg-gradient-to-r from-eunoia-purple to-eunoia-medium-purple hover:from-eunoia-medium-purple hover:to-eunoia-purple text-white px-8 py-4 rounded-md font-sans font-medium transition-all shadow-purple-lg hover:shadow-purple-xl">
                 <span className="relative z-10 flex items-center">
                   Discover Our Services
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -180,27 +166,24 @@ const Hero: React.FC = () => {
                 <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-all duration-1000"></span>
               </button>
               
-              {/* Secondary CTA */}
-              <button className="relative overflow-hidden group border-2 border-eunoia-purple text-eunoia-purple px-8 py-4 rounded-md font-sans font-medium transition-all shadow-md hover:shadow-lg">
+              {/* Secondary CTA Button - using our border style */}
+              <button className="relative overflow-hidden group border-2 border-eunoia-purple text-eunoia-purple px-8 py-4 rounded-md font-sans font-medium hover:bg-eunoia-soft-purple/40 transition-all shadow-sm hover:shadow-purple-md">
                 <span className="relative z-10 flex items-center">
                   Learn Our Story
                 </span>
-                
-                {/* Fill effect on hover */}
-                <span className="absolute inset-0 bg-eunoia-soft-purple/40 transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300"></span>
               </button>
             </div>
             
             {/* Social proof */}
             <div className={`mt-16 transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-              <p className="text-eunoia-dark/60 text-sm mb-4">Trusted by innovative companies worldwide</p>
+              <p className="text-eunoia-dark-secondary text-sm mb-4">Trusted by innovative companies worldwide</p>
               <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12">
                 {/* Placeholder for company logos */}
-                <div className="text-eunoia-dark/40 font-medium">TechCorp</div>
-                <div className="text-eunoia-dark/40 font-medium">InnovateLabs</div>
-                <div className="text-eunoia-dark/40 font-medium">FutureAI</div>
-                <div className="text-eunoia-dark/40 font-medium">QuantumSoft</div>
-                <div className="text-eunoia-dark/40 font-medium">NexGen</div>
+                <div className="text-eunoia-dark-secondary/60 font-medium">TechCorp</div>
+                <div className="text-eunoia-dark-secondary/60 font-medium">InnovateLabs</div>
+                <div className="text-eunoia-dark-secondary/60 font-medium">FutureAI</div>
+                <div className="text-eunoia-dark-secondary/60 font-medium">QuantumSoft</div>
+                <div className="text-eunoia-dark-secondary/60 font-medium">NexGen</div>
               </div>
             </div>
           </div>
@@ -214,10 +197,10 @@ const Hero: React.FC = () => {
           className="relative group"
           aria-label="Scroll to About section"
         >
-          <div className="animate-bounce rounded-full w-12 h-12 flex items-center justify-center bg-white/80 backdrop-blur-sm shadow-lg shadow-eunoia-purple/20 border border-eunoia-soft-purple/30 transition-all duration-300 group-hover:bg-white group-hover:shadow-eunoia-purple/30">
-            <ArrowRight className="text-eunoia-purple transform rotate-90 transition-all duration-300 group-hover:text-eunoia-light-purple" size={20} />
+          <div className="animate-bounce rounded-full w-12 h-12 flex items-center justify-center bg-white/80 backdrop-blur-sm shadow-purple-md border border-eunoia-soft-purple/30 transition-all duration-300 group-hover:bg-white group-hover:shadow-purple-lg">
+            <ArrowRight className="text-eunoia-purple transform rotate-90 transition-all duration-300 group-hover:text-eunoia-medium-purple" size={20} />
           </div>
-          <span className="absolute top-14 left-1/2 transform -translate-x-1/2 text-sm text-eunoia-dark/70 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">Scroll Down</span>
+          <span className="absolute top-14 left-1/2 transform -translate-x-1/2 text-sm text-eunoia-dark-secondary whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">Scroll Down</span>
         </a>
       </div>
     </section>

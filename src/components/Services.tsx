@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CircleDot, Layers, Command, LineChart, Users, Compass } from 'lucide-react';
+import { CircleDot, Layers, Command, LineChart, Users, Compass, ArrowRight } from 'lucide-react';
 import PlasmaAnimation from './PlasmaAnimation';
 
 interface ServiceCardProps {
@@ -24,22 +24,22 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, ind
       }}
     >
       {/* Card background with glass effect */}
-      <div className="absolute inset-0 bg-white/80 backdrop-blur-sm rounded-xl border border-eunoia-soft-purple/30 transition-all duration-500 group-hover:border-eunoia-purple/40 group-hover:shadow-lg z-10"></div>
+      <div className="absolute inset-0 bg-white/80 backdrop-blur-sm rounded-xl border border-eunoia-soft-purple/30 transition-all duration-500 group-hover:border-eunoia-purple/40 group-hover:shadow-purple-lg z-10"></div>
       
       {/* Glow effect on hover */}
-      <div className={`absolute -inset-1 bg-gradient-to-r from-eunoia-purple to-eunoia-light-purple rounded-xl blur opacity-0 transition-opacity duration-500 ${isHovered ? 'opacity-30' : ''}`}></div>
+      <div className={`absolute -inset-1 bg-gradient-to-r from-eunoia-purple to-eunoia-medium-purple rounded-xl blur opacity-0 transition-opacity duration-500 ${isHovered ? 'opacity-30' : ''}`}></div>
       
       {/* Content */}
       <div className="relative z-20 p-8">
-        <div className="w-16 h-16 rounded-lg flex items-center justify-center bg-gradient-to-r from-eunoia-soft-purple/40 to-eunoia-soft-purple/20 mb-6 transition-all duration-300 group-hover:from-eunoia-purple/20 group-hover:to-eunoia-light-purple/20">
+        <div className="w-16 h-16 rounded-lg flex items-center justify-center bg-gradient-to-r from-eunoia-soft-purple/40 to-eunoia-soft-purple/20 mb-6 transition-all duration-300 group-hover:from-eunoia-purple/20 group-hover:to-eunoia-medium-purple/20">
           {icon}
         </div>
         
         <h3 className="font-serif text-2xl mb-4 text-eunoia-dark">{title}</h3>
-        <p className="text-eunoia-dark/70 leading-relaxed mb-6">{description}</p>
+        <p className="text-eunoia-dark-secondary leading-relaxed mb-6">{description}</p>
         
         <div className="flex items-center">
-          <button className="bg-transparent text-eunoia-purple font-medium text-sm transition-all duration-300 group-hover:text-eunoia-light-purple flex items-center">
+          <button className="bg-transparent text-eunoia-purple font-medium text-sm transition-all duration-300 group-hover:text-eunoia-medium-purple flex items-center">
             Learn more 
             <span className={`ml-2 transition-all duration-300 ${isHovered ? 'translate-x-1' : ''}`}>→</span>
           </button>
@@ -66,7 +66,7 @@ const Services: React.FC = () => {
           <h2 className="font-serif text-3xl md:text-5xl font-bold mb-4">
             <span className="gradient-text">Intelligent Solutions for Complex Challenges</span>
           </h2>
-          <p className="text-eunoia-dark/70 max-w-2xl mx-auto text-lg">
+          <p className="text-eunoia-dark-secondary max-w-2xl mx-auto text-lg">
             Explore our comprehensive suite of AI-powered services designed to transform your cognitive capabilities and amplify your potential.
           </p>
         </div>
@@ -111,11 +111,17 @@ const Services: React.FC = () => {
         </div>
         
         <div className="mt-20 text-center relative">
-          <div className="absolute inset-0 blur-2xl opacity-10 bg-gradient-to-r from-eunoia-purple to-eunoia-light-purple rounded-full"></div>
+          {/* Button glow effect */}
+          <div className="absolute inset-0 blur-2xl opacity-10 bg-gradient-to-r from-eunoia-purple to-eunoia-medium-purple rounded-full"></div>
+          
+          {/* Gold accent CTA button */}
           <div className="relative">
-            <span className="inline-block px-6 py-3 bg-gradient-to-r from-eunoia-purple to-eunoia-light-purple text-white rounded-full font-medium shadow-lg hover:shadow-xl hover:from-eunoia-light-purple hover:to-eunoia-purple transition-all duration-300 cursor-pointer">
-              Request Custom Solution
-            </span>
+            <button className="inline-block px-8 py-4 bg-gradient-to-r from-eunoia-purple via-eunoia-medium-purple to-eunoia-gold hover:from-eunoia-gold hover:via-eunoia-medium-purple hover:to-eunoia-purple text-white rounded-full font-medium shadow-purple-lg hover:shadow-gold-glow transition-all duration-300 transform hover:scale-105 group">
+              <span className="flex items-center">
+                Request Custom Solution
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </span>
+            </button>
           </div>
         </div>
       </div>
